@@ -1,0 +1,113 @@
+/*
+   TOC:
+   a. Common Styles
+   e. Postfolio
+===================================================================== */
+
+/* ================================================================== */
+/* a. Common Styles
+/* ================================================================== */
+
+/* Left clearing for flexible columns - columns that changes width in
+different screen sizes. Makes columns with different heights align
+properly.
+--------------------------------------------------------------------- */
+.first { clear: left; }   /* first column in default screen */
+.m-first { clear: none; } /* first column in medium size screens */
+
+/* ================================================================== */
+/* e. Portfolio
+/* ================================================================== */
+/* overall settings */
+#portfolio {
+   background: url(../images/patterns/grey.png);
+   padding-top: 100px;
+   padding-bottom: 50px;
+   color: #000000;
+   font-size: 12px;
+}
+
+/* div section-head */
+#portfolio .section-head h2,
+#portfolio .section-head p.eng {
+   color: #0073C0;
+   text-align: center;
+}
+#portfolio .col p.pic{
+   color: #fff;
+   text-align: center;
+}
+
+/* div heading */
+#portfolio .heading p.name {
+   color: #0073C0;
+   font-size: 36px;
+   text-align: left;
+}
+#portfolio .heading p.name span {
+   font-size: 26px;
+   margin-left: 20px;
+}
+#portfolio .heading p.object,
+#portfolio .heading p.role {
+   color: #0073C0;
+   font-size: 22px;
+   text-align: left;
+}
+
+/* div main */
+#portfolio .main {text-align: left;}
+#portfolio .main h4{font-size: 16px;}
+
+/* div back */
+#portfolio .back { text-align: center;}
+#portfolio .button {background: #0073C0; }
+#portfolio .button:hover,
+#portfolio .button:active {
+   background: #fff;
+   color: #0073C0;
+}
+
+
+/* ================================================================== */
+/* # CSS settings for smartphone
+/* ================================================================== */
+
+@media only screen and (max-width: 767px) {
+    /* div heading */
+    #portfolio .heading p.name { 
+        font-size: 20px;
+        text-align: center;
+    }
+    #portfolio .heading p.name span {
+    font-size: 14px;
+    margin-left: 15px;
+    }
+    #portfolio .heading p.role {
+    font-size: 12px;
+    text-align: center;
+    }
+
+    /* div main */
+    #portfolio .main {
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 10px;
+        text-align: left;
+    }
+    #portfolio .main h4{ 
+        font-size: 16px;
+        text-align: center;
+    }
+    #portfolio .col p.message{ font-size: 10px; }
+
+
+    /* div back */
+    #portfolio .back { text-align: center; }
+    #portfolio .button {background: #0073C0; }
+    #portfolio .button:hover,
+    #portfolio .button:active {
+    background: #fff;
+    color: #0073C0;
+    }
+}

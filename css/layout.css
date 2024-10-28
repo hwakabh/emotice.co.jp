@@ -1,0 +1,795 @@
+/*
+   TOC:
+   a. Common Styles
+   b. Header Styles
+   c. Intro Section(ホーム)
+   d. Corp(企業概念)
+   d. Services(人工知能開発)
+   e. Postfolio(開発チーム)
+   j. Contact(お問い合わせ/会社概要)
+   m. Footer Styles
+   n. Media Queries
+
+===================================================================== */
+
+
+/* ================================================================== */
+
+/* a. Common Styles
+
+/* ================================================================== */
+
+.section-head h2 { font: 30px/42px montserrat-bold, sans-serif; }
+.desc { font: 14px/24px opensans-regular, sans-serif; }
+.intro { font: 20px/36px opensans-light, sans-serif; }
+
+/* Left clearing for flexible columns - columns that changes width in
+different screen sizes. Makes columns with different heights align
+properly.
+--------------------------------------------------------------------- */
+.first { clear: left; }   /* first column in default screen */
+.m-first { clear: none; } /* first column in medium size screens */
+
+/* Flex Slider
+/* ------------------------------------------------------------------ */
+
+/* Reset */
+.flexslider a:active,
+.flexslider a:focus  { outline: none; }
+.slides, .flex-control-nav,
+.flex-direction-nav { margin: 0; padding: 0; list-style: none; }
+.slides li { margin: 0; }
+
+/* Necessary Styles */
+.flexslider {
+   position: relative;
+   zoom: 1;
+   margin: 0;
+   padding: 0;
+}
+.flexslider .slides { zoom: 1; }
+.flexslider .slides > li { position: relative; }
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides > li { display: none; -webkit-backface-visibility: hidden; }
+/* Suggested container for slide animation setups. Can replace this with your own */
+.flex-container { zoom: 1; position: relative; }
+
+/* Clearfix for .slides */
+.slides:before,
+.slides:after {
+    content: " ";
+    display: table;
+}
+.slides:after {
+    clear: both;
+}
+
+/* ================================================================== */
+
+/* b. Header Styles
+
+/* ================================================================== */
+
+header {
+   height: 54px;
+   width: 100%;
+   z-index: 99999;
+   background: #0073C0;
+
+   position: fixed;
+   top: 0;
+   left: 0;
+}
+header.static {
+   background: #23262;
+   position: static;
+}
+
+/* header logo */
+header .logo {
+   position: relative;
+   height: 54px;
+   width: 150px;
+   float: left;
+}
+header .logo a {
+   display: block;
+   padding: 0;
+   margin: 0;
+   height: 24px;
+   width: 121px;
+   line-height: 18px;
+
+   position: absolute;
+   left: 12px;
+   top: 12px;
+}
+
+/* primary navigation
+--------------------------------------------------------------------- */
+#nav-wrap ul, #nav-wrap li, #nav-wrap a {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+/* nav-wrap */
+#nav-wrap {
+	position: relative;
+   font: 15px opensans-regular, sans-serif;
+   float: right;
+}
+
+/* hide toggle button */
+#nav-wrap > a { display: none; }
+
+ul#nav {
+   min-height: 54px;
+   width: auto;
+
+   /* left align the menu */
+   text-align: left;
+}
+ul#nav li {
+	position: relative;
+	list-style: none;
+   height: 54px;
+
+   display: inline-block;
+}
+ul#nav > li.active a {
+   background: #fff;
+   color: #104ab0 !important;
+}
+
+/* Links */
+ul#nav li a {
+   display: block;
+   padding: 0 14px;
+   line-height: 54px;
+	text-decoration: none;
+   text-align: left;
+   color: #fff;
+
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
+	-ms-transition: color .2s ease-in-out;
+	transition: color .2s ease-in-out;
+}
+
+ul#nav li a:active { background-color: transparent !important; }
+ul#nav li:hover > a,
+ul#nav li.active a { color: #0073C0; }
+
+
+
+/* ================================================================== */
+
+/* c. Intro Section
+/* c. 「ホーム」のCSS設定
+
+/* ================================================================== */
+
+#intro {
+   background-image: 
+	   url(../images/main_blue.jpg),
+	   url(../images/main2_blue.jpg);
+   background-repeat:
+	   no-repeat,
+	   no-repeat,
+   background-position:
+   	   center,
+	   center,
+}
+
+.slides {
+   height: 600px;
+   overflow: hidden;
+}
+.slider-text {
+   font: 36px/78px montserrat-bold, Sans-serif;
+   color: #fff;
+   text-align: right;
+   text-shadow: 0px 1px 5px rgba(50, 50, 50, .5);
+   width: 100%;
+   margin: 350px auto 100px auto;
+   margin-top: 450px;
+   padding: 0;
+   line-height: 48px;
+}
+
+/* Direction Navigation
+--------------------------------------------------------------- */
+.flex-direction-nav a {
+   display: block;
+	width: 40px;
+	height: 66px;
+	margin: 0;
+	background-color: #2D3339;
+	cursor: pointer;
+	z-index: 99999;
+	opacity: 0;
+   position: absolute;
+	top: 50%;
+
+   font: 0/0 a;
+   text-shadow: none;
+   color: transparent;
+
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.flex-direction-nav a:hover { background-color: #0073C0; }
+
+.flex-direction-nav .flex-next {
+	right: 0px;
+	background: #2D3339 url(../images/direction-nav-right.png) no-repeat 53% 50%;
+	position: absolute;
+}
+.flex-direction-nav .flex-prev {
+	left: 0px;
+	background: #2D3339 url(../images/direction-nav-left.png) no-repeat 47% 50%;
+	position: absolute;
+}
+.flexslider:hover .flex-next,
+.flexslider:hover .flex-prev { opacity: 1; }
+.flex-direction-nav .flex-disabled {
+   opacity: .3 !important;
+   filter: alpha(opacity=30);
+   cursor: default;
+}
+
+/* ================================================================== */
+
+/* d. Corp
+/* e. 「企業概念」のCSS設定
+
+/* ================================================================== */
+/* overall settings */
+#Corp {
+   background-color: #0073C0;
+   padding-top: 75px;
+   padding-bottom: 50px;
+   color: #7fe6ed;
+}
+
+/* div section-head */
+#Corp .section-head h2 {
+   font: 34px/42px montserrat-bold, sans-serif;
+   color: #fff;
+   letter-spacing: -1px;
+   margin-bottom: 3px;
+   text-align: center;
+}
+#Corp .section-head p.eng {
+   color: #fff;
+   text-align: center;
+}
+#Corp .section-head p.object{
+   text-align: center;
+}
+
+/* div main */
+#Corp .main p.title{
+   color: #fff;
+   text-align: center;
+   font-size: 20px;
+}
+#Corp .main p.message{
+   color: #fff;
+   font-size: 14px;
+   text-align: center;
+}
+
+
+/* ================================================================== */
+
+/* d. Services
+/* d. 「人工知能開発」のCSS設定
+
+/* ================================================================== */
+/* overall settings */
+#services {
+   background: #f5f5f5 url(../images/patterns/grey.png);
+   padding-top: 75px;
+   padding-bottom: 50px;
+}
+
+/* div section-head */
+#services .section-head h2 {
+   color: #0073C0;
+   text-align: center;
+}
+#services .section-head p.eng {
+   color: #0073C0;
+   text-align: center;
+}
+#services .section-head p.sub {
+   color: #0073C0;
+   text-align: center;
+}
+#services .section-head p.object {
+   text-align: center;
+}
+
+
+/* div row */
+/* --- div service-wrapper --- */
+.services-wrapper { margin-top: 10px; }
+.services-wrapper .col {
+   width: 33.33333%;
+   margin-bottom: 30px;
+   text-align: center;
+}
+.services-wrapper h4 {
+   color: #0073C0;
+   font: 15px/24px montserrat-bold, sans-serif;
+   letter-spacing: 1px;
+}
+.services-wrapper p {
+   font-size: 16px;
+   line-height: 30px;
+}
+
+/* --- div process-wrapper --- */
+.process-wrapper { margin-top: 10px; }
+.process-wrapper .col {
+   width: 25%;
+   text-align: center;
+}
+.process-wrapper h4 {
+   color: #0073C0;
+   font: 15px/24px montserrat-bold, sans-serif;
+   letter-spacing: 1px;
+   text-align: center;
+}
+.process-wrapper p {
+   font-size: 12px;
+   line-height: 30px;
+}
+
+/* ================================================================== */
+
+/* e. Portfolio
+/* e. 「開発チーム」のCSS設定
+
+/* ================================================================== */
+/* overall settings */
+#portfolio {
+   background-color: #0073C0;
+   padding-top: 75px;
+   padding-bottom: 50px;
+   color: #fff;
+}
+
+
+/* div section-head */
+#portfolio .section-head h2 {
+   font: 34px/42px montserrat-bold, sans-serif;
+   color: #fff;
+   letter-spacing: -1px;
+   margin-bottom: 3px;
+   text-align: center;
+}
+#portfolio .section-head p.eng,
+#portfolio .section-head p.object {
+   color: #fff;
+   text-align: center;
+}
+
+/* div one-third and two-thrids*/
+#portfolio .col {
+   background-color: #0073C0;
+   color: #fff;
+}
+#portfolio .col p.pic{
+   color: #fff;
+   text-align: center;
+}
+#portfolio .col p.name{
+   color: #fff;
+   font-size: 18px;
+}
+#portfolio .col p.history{
+   color: #fff;
+   font-size: 14px;
+}
+#portfolio .col p.message{
+   color: #fff;
+   font-size: 12px;
+}
+#portfolio .button { background: #0073C0; }
+#portfolio .button:hover,
+#portfolio .button:active {
+   background: #fff;
+   color: #0073C0;
+}
+
+
+/* ================================================================== */
+
+/* j. Contact
+/* j. 「お問い合わせ」のCSS設定
+
+/* ================================================================== */
+/* overall settings */
+#contact {
+   background: #f5f5f5 url(../images/patterns/grey.png);
+   padding-top: 75px;
+   padding-bottom: 50px;
+}
+
+/* div section-head */
+#contact .section-head h2,
+#contact .section-head p.eng,
+#contact .section-head p.sub,
+#contact .section-head p.object {
+   color: #0073C0;
+   text-align: center;
+}
+
+/* div row(contact form) */
+#contact form {
+   margin-bottom: 30px;
+   color: #0073C0;
+}
+
+#contact label {
+   font: 15px/24px opensans-semibold, sans-serif;
+   margin: 12px 0;
+   color: #0073C0;
+	display: inline-block;
+	float: left;
+   width: 22%;
+}
+#contact input,
+#contact textarea,
+#contact select {
+   padding: 18px 20px;
+   color: #0073C0;
+   background: #fff;
+   margin-bottom: 42px;
+   border: 1px #0073C0 double;
+   font-size: 14px;
+   line-height: 24px;
+   width: 100%;
+}
+#contact input:focus,
+#contact textarea:focus,
+#contact select:focus {
+	color: #fff;
+	background-color: #0073C0;
+}
+#contact button.submit {
+   font: 18px/30px montserrat-bold, sans-serif;
+   letter-spacing: 3px;
+   color:#fff;
+   background: #0073C0;
+   padding: 18px 30px;
+   border: none;
+   cursor: pointer;
+   height: auto;
+   display: inline-block;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+}
+#contact button.submit:hover {
+	color: #0073C0;
+	background: #fff;
+}
+#contact span.required {
+	color: #0073C0;
+	font-size: 13px;
+}
+
+#message-warning, #message-success {
+   display: none;
+	background: #151719;
+	padding: 24px 24px;
+	margin-bottom: 36px;
+   width: 88%;
+}
+#message-warning { color: #D72828; }
+#message-success { color: #0073C0; }
+
+#message-warning i,
+#message-success i {
+   margin-right: 10px;
+}
+
+#image-loader {
+   display: none;
+   position: relative;
+   left: 18px;
+   top: 12px;
+}
+
+
+
+/* ================================================================== */
+
+/* m. footer
+
+/* ================================================================== */
+/* overall settings */
+footer {
+   background-color: #0073C0;
+   color: #fff;
+   font-size: 14px;
+   padding-top: 50px;
+   padding-bottom: 20px;
+   text-align: center;
+}
+footer a, footer a:visited { color: #0B686B; }
+footer a:hover, footer a:focus { color: #fff; }
+
+/* div company-info */
+footer .company-info .col {
+   width: 25%;
+   text-align: center;
+}
+
+/* --- company-info icon settings --- */
+footer .company-info h4 {
+   color: #fff;
+   padding-top: 20px;
+   font-size: 25px;
+   letter-spacing: 1px;
+}
+footer .company-info p {
+   color: #fff;
+   font-size: 14px;
+   letter-spacing: 1px;
+}
+
+
+/* div copyright */
+footer .copyright {
+   width: 100%;
+   font-size: 12px;
+}
+
+/* ================================================================== */
+
+/* n. Media Queries
+
+/* ================================================================== */
+
+
+/* small screens
+--------------------------------------------------------------------- */
+@media only screen and (max-width: 836px) {
+
+   /* adjust sections padding top */
+   #services, #portfolio,
+   #journal, #about { padding-top: 120px; }
+
+   /* adjust font size */
+   .intro, .testimonies .client-cite { font-size: 18px; }
+
+   /* intro section
+   -------------------------------------------------------------------- */
+   .slider-text h2 { font: 48px/66px montserrat-regular, Sans-serif; }
+
+   /* services section
+   -------------------------------------------------------------------- */
+   #services .section-head .col { width: 100%; }
+   #services .services-wrapper { margin-top: 12px; }
+   #services .services-wrapper .col { width: 50%; }
+   #services .services-wrapper .col { margin-bottom: 0; }
+
+   /* portfolio section
+   -------------------------------------------------------------------- */
+   #portfolio #portfolio-wrapper { margin-top: 12px; }
+   #portfolio #portfolio-wrapper .col { width: 33.33333%; }
+
+   /* about section
+   -------------------------------------------------------------------- */
+   #about .process-wrap .col { width: 50%; }
+   #about .section-head .col { width: 100%; }
+
+   /* contact section
+   ----------------------------------------------------------------------- */
+   #contact label { width: 25%; }
+   #contact button.submit { margin-left: 25%; }
+   #contact input,
+	#contact textarea,
+	#contact select { width: 70%; }
+   #message-warning, #message-success { width: 95%; }
+
+   /* left clearing */
+   .first { clear: none; }
+   .m-first { clear: left; }
+
+   /* blog
+   -------------------------------------------------------------------- */
+   .post, #blog-entries .post { padding-top: 96px; }
+   .post p.lead, #blog-entries .post .post-content p { font-size: 18px; }
+   .post .entry-header h1 {
+      padding-right: 18px;
+      font-size: 43px;
+   }
+   .post .post-meta { margin-top: 6px; }
+   .post .post-image { margin: 12px 0 24px 0 }
+   .post .bio .about { padding-left: 18px; }
+
+}
+
+
+
+/* mobile wide
+---------------------------------------------------------------------- */
+/* CSS settings for smartphone use */
+
+@media only screen and (max-width: 767px) {
+
+   /* center align some text */
+   .section-head, .intro, #about h3,
+   #journal .entry-header {
+      text-align: center;
+   }
+
+
+   /* mobile navigation
+   -------------------------------------------------------------------- */
+
+   header.mobile { height: 66px; }
+   header.mobile .logo a { top: 22px; }
+
+   .mobile #nav-wrap {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      width: auto;
+      margin: 0;
+   }
+   .mobile #nav-wrap > a {
+	   width: 48px;
+		height: 48px;
+		text-align: left;
+		background-color: #0073C0;
+		position: relative;
+      border: none;
+      float: right;
+
+      font: 0/0 a;
+      text-shadow: none;
+      color: transparent;
+      }
+
+   .mobile #nav-wrap > a:before,
+   .mobile #nav-wrap > a:after {
+	   position: absolute;
+		border: 2px solid #fff;
+		top: 35%;
+		left: 25%;
+		right: 25%;
+		content: '';
+	}
+   .mobile #nav-wrap > a:after { top: 60%; }
+
+   /* toggle buttons */
+	.mobile #nav-wrap:not( :target ) > a:first-of-type,
+	.mobile #nav-wrap:target > a:last-of-type  {
+	   display: block;
+	}
+
+   /* hide menu panel */
+   .mobile #nav-wrap ul#nav {
+      height: auto;
+		display: none;
+      clear: both;
+   }
+   .mobile #nav-wrap ul#nav li {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+   }
+   .mobile #nav-wrap ul#nav > li.active a {
+      color: #0073C0 !important;
+      background: none;
+   }
+
+   /* display menu panels */
+	.mobile #nav-wrap:target > ul#nav	{
+	   display: block;
+      padding: 12px 25px 24px 25px;
+      background: #4c4e5a;
+      margin: 0;
+      clear: both;
+   }
+   .mobile #nav-wrap ul#nav li { border-bottom: 1px dotted #595B6A; }
+   .mobile #nav-wrap ul#nav li a {
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      margin: 10px 0;
+      line-height: 14px;
+      border: none;
+   }
+
+    /* intro section
+    /* 「ホーム」スマホ用CSS
+   -------------------------------------------------------------------- */
+   .slider-text {
+      font: 14px montserrat-bold, sans-serif;
+      text-align: center;
+   }
+   .slides {
+      overflow: hidden;
+      min-height: 300px;
+   }
+
+    /* Corp section
+    /* 「企業理念」スマホ用CSS
+   -------------------------------------------------------------------- */
+   #Corp .main {
+      font-size: 12px;
+   }
+
+   /* portfolio section
+   /* 「人工知能開発」スマホ用CSS
+   --------------------------------------------------------------------- */
+    .reveal-modal {
+   	margin-left: -42%;
+		width: 84%;
+   }
+
+   /* contact section
+   /* 「お問い合わせ」スマホ用CSS
+   ----------------------------------------------------------------------- */
+   #contact label {
+      display: block;
+      float: none;
+      width: auto;
+   }
+   #contact input,
+   #contact textarea,
+   #contact select {
+      width: 100%;
+      margin-bottom: 30px;
+   }
+   #contact button.submit {
+      margin-left: 0;
+   }
+   #message-warning,
+   #message-success {
+      width: 100%;
+   }
+
+/* mobile narrow
+  -------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 460px) {
+
+   /* intro section
+   ------------------------------------------------------------------------- */
+   .slider-text { margin-top: 108px; margin-bottom: 36px; }
+   .slider-text h2 { font: 32px/42px montserrat-regular, sans-serif; }
+   .slider-text p {
+      font: 12px/24px opensans-regular, sans-serif;
+      margin-top: 24px;
+   }
+
+    /* journal section
+   ------------------------------------------------------------------------- */
+   #journal .entry-title h3 {
+     font-size: 28px;
+     line-height: 36px;
+   }
+
+}
+
+
+

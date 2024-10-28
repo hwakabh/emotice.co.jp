@@ -1,0 +1,499 @@
+/*
+   TOC:
+   a. Common Styles
+   c. Intro Section
+   d. Corp
+   d. Services
+   e. Postfolio
+   j. Contact
+   n. Media Queries
+===================================================================== */
+
+
+/* ================================================================== */
+/* a. Common Styles
+/* ================================================================== */
+
+/* Left clearing for flexible columns - columns that changes width in
+different screen sizes. Makes columns with different heights align
+properly.
+--------------------------------------------------------------------- */
+.first { clear: left; }   /* first column in default screen */
+.m-first { clear: none; } /* first column in medium size screens */
+
+/* Flex Slider
+/* ------------------------------------------------------------------ */
+
+/* Reset */
+.flexslider a:active,
+.flexslider a:focus  { outline: none; }
+.slides, .flex-control-nav,
+.flex-direction-nav { margin: 0; padding: 0; list-style: none; }
+.slides li {
+    margin: 0;
+    padding-bottom: 0px;
+}
+
+/* Necessary Styles */
+.flexslider {
+   position: relative;
+   zoom: 1;
+   margin: 0;
+   padding-top: 0px;
+   padding-bottom: 0px
+}
+.flexslider .slides { zoom: 1; }
+.flexslider .slides > li { position: relative; }
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+*.flexslider .slides > li { display: none; -webkit-backface-visibility: hidden; }
+/* Suggested container for slide animation setups. Can replace this with your own */
+.flex-container { zoom: 1; position: relative; }
+
+/* Clearfix for .slides */
+.slides:before,
+.slides:after {
+    content: " ";
+    display: table;
+}
+.slides:after {
+    clear: both;
+}
+
+/* ================================================================== */
+/* c. Intro Section(slider settings)
+/* ================================================================== */
+#intro li, ul{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.slider1 {
+    background: url(../images/main_blue.jpg) no-repeat center;
+    height: 750px;
+    overflow: hidden;
+}
+
+.slider-text1 {
+   font: 36px/78px montserrat-bold, Sans-serif;
+   color: #fff;
+   text-shadow: 0px 1px 5px rgba(50, 50, 50, .5);
+   width: 100%;
+   margin-top: 450px;
+   margin-left: 600px;
+   line-height: 48px;
+}
+
+.slider2 {
+    background: url(../images/main2_blue.jpg) no-repeat center;
+    height: 750px;
+    overflow: hidden;
+}
+
+
+.slider-text2 {
+   font: 36px/78px montserrat-bold, Sans-serif;
+   color: #fff;
+   text-align: center;
+   text-shadow: 0px 1px 5px rgba(50, 50, 50, .5);
+   width: 100%;
+   margin-top: 550px;
+   line-height: 48px;
+}
+
+
+
+/* Direction Navigation
+--------------------------------------------------------------- */
+.flex-direction-nav a {
+   display: block;
+	width: 40px;
+	height: 66px;
+	margin: 0;
+	background-color: #2D3339;
+	cursor: pointer;
+	z-index: 99999;
+	opacity: 0;
+   position: absolute;
+	top: 50%;
+
+   font: 0/0 a;
+   text-shadow: none;
+   color: transparent;
+
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.flex-direction-nav a:hover { background-color: #0073C0; }
+
+.flex-direction-nav .flex-next {
+	right: 0px;
+	background: #2D3339 url(../images/direction-nav-right.png) no-repeat 53% 50%;
+	position: absolute;
+}
+.flex-direction-nav .flex-prev {
+	left: 0px;
+	background: #2D3339 url(../images/direction-nav-left.png) no-repeat 47% 50%;
+	position: absolute;
+}
+.flexslider:hover .flex-next,
+.flexslider:hover .flex-prev { opacity: 1; }
+.flex-direction-nav .flex-disabled {
+   opacity: .3 !important;
+   filter: alpha(opacity=30);
+   cursor: default;
+}
+
+/* ================================================================== */
+/* d. Corp
+/* ================================================================== */
+/* overall settings */
+#Corp {
+   background-color: #0073C0;
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
+
+/* div section-head */
+#Corp .section-head h2 {
+   font: 34px/42px montserrat-bold, sans-serif;
+   color: #fff;
+   letter-spacing: -1px;
+   margin-bottom: 3px;
+   text-align: center;
+}
+#Corp .section-head p.eng {
+   color: #fff;
+   text-align: center;
+}
+#Corp .section-head p.object{
+   text-align: center;
+}
+
+/* div main */
+#Corp .main p.title {
+   color: #fff;
+   margin-bottom: 10px;
+   text-align: center;
+   font-size: 22px;
+}
+#Corp .main p {
+   color: #fff;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   text-align: center;
+   font-size: 13px;
+}
+
+
+/* ================================================================== */
+/* d. Services
+/* ================================================================== */
+/* overall settings */
+#services {
+   background: #f5f5f5 url(../images/patterns/grey.png);
+   padding-top: 75px;
+   padding-bottom: 50px;
+   text-align: center;
+}
+
+/* div section-head */
+#services .section-head h2,
+#services .section-head p {
+    color: #0073C0;
+}
+#services .section-head p.sub { font-size: 15px;}
+
+
+/* div row */
+/* --- div service-wrapper --- */
+.services-wrapper { margin-top: 10px; }
+.services-wrapper .col {
+   width: 33.33333%;
+   margin-bottom: 30px;
+}
+.services-wrapper p {
+   font-size: 12px;
+   line-height: 30px;
+}
+
+/* --- div process-wrapper --- */
+.process-wrapper { margin-top: 10px; }
+.process-wrapper .col { width: 25%;}
+.process-wrapper p {
+   font-size: 12px;
+   line-height: 30px;
+}
+
+/* ================================================================== */
+/* e. Portfolio
+/* ================================================================== */
+/* overall settings */
+#portfolio {
+   background-color: #0073C0;
+   padding-top: 75px;
+   padding-bottom: 50px;
+   color: #fff;
+}
+
+
+/* div section-head */
+#portfolio .section-head h2 {
+   font: 34px/42px montserrat-bold, sans-serif;
+   color: #fff;
+   letter-spacing: -1px;
+   margin-bottom: 3px;
+   text-align: center;
+}
+#portfolio .section-head p.eng,
+#portfolio .section-head p.object {
+   color: #fff;
+   text-align: center;
+}
+
+/* div one-third and two-thrids*/
+#portfolio .col {
+   background-color: #0073C0;
+   color: #fff;
+}
+#portfolio .col p.pic{
+   color: #fff;
+   text-align: center;
+}
+#portfolio .col p.name{
+   color: #fff;
+   font-size: 18px;
+}
+#portfolio .col p.history{
+   color: #fff;
+   font-size: 14px;
+}
+#portfolio .col p.message{
+   color: #fff;
+   font-size: 12px;
+}
+#portfolio .button { background: #0073C0; }
+#portfolio .button:hover,
+#portfolio .button:active {
+   background: #fff;
+   color: #0073C0;
+}
+
+
+/* ================================================================== */
+/* j. Contact
+/* ================================================================== */
+/* overall settings */
+#contact {
+   background: #f5f5f5 url(../images/patterns/grey.png);
+   padding-top: 75px;
+   padding-bottom: 50px;
+}
+
+/* div section-head */
+#contact .section-head h2,
+#contact .section-head p.eng,
+#contact .section-head p.sub,
+#contact .section-head p.object {
+   color: #0073C0;
+   text-align: center;
+}
+
+/* div row(contact form) */
+#contact form {
+   margin-bottom: 30px;
+   color: #0073C0;
+   width: 80%;
+}
+
+#contact label {
+   font: 14px;
+   margin: 0 0;
+   text-align: left;
+   color: #0073C0;
+	display: inline-block;
+	float: left;
+}
+#contact input,
+#contact textarea,
+#contact select {
+   padding: 18px 0px;
+   color: #0073C0;
+   background: #fff;
+   margin-bottom: 42px;
+   border: 1px #0073C0 double;
+   font-size: 14px;
+   line-height: 24px;
+   width: 100%;
+}
+#contact input:focus,
+#contact textarea:focus,
+#contact select:focus {
+	color: #fff;
+	background-color: #0073C0;
+}
+#contact button.submit {
+   font: 18px/30px montserrat-bold, sans-serif;
+   letter-spacing: 3px;
+   color:#fff;
+   background: #0073C0;
+   padding: 18px 30px;
+   border: none;
+   cursor: pointer;
+   height: auto;
+   display: inline-block;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+}
+#contact button.submit:hover {
+	color: #0073C0;
+	background: #fff;
+}
+#contact span.required {
+	color: #0073C0;
+	font-size: 13px;
+}
+
+#message-warning, #message-success {
+   display: none;
+	background: #151719;
+	padding: 24px 24px;
+	margin-bottom: 36px;
+   width: 88%;
+}
+#message-warning { color: #D72828; }
+#message-success { color: #0073C0; }
+
+#message-warning i,
+#message-success i {
+   margin-right: 10px;
+}
+
+#image-loader {
+   display: none;
+   position: relative;
+   left: 18px;
+   top: 12px;
+}
+
+/* ================================================================== */
+/* n. Media Queries
+/* ================================================================== */
+
+/* small screens
+--------------------------------------------------------------------- */
+@media only screen and (max-width: 836px) {
+}
+
+/* mobile wide
+---------------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+
+    /* intro section for smartphone
+   -------------------------------------------------------------------- */
+    .slider1 {
+        background: url(../images/m_main_blue.jpg) no-repeat center;
+        height: 450px;
+    }
+    .slider2 {
+        background: url(../images/m_main2_blue.jpg) no-repeat center;
+        height: 450px;
+    }
+    .slider-text1 {
+        font: 15px montserrat-bold, sans-serif;
+        color: #fff;
+        text-shadow: 0px 1px 5px rgba(50, 50, 50, .5);
+        width: 100%;
+        margin-top: 250px;
+        margin-left: 80px;
+        line-height: 20px;
+    }
+    .slider-text2 {
+        font: 15px montserrat-bold, sans-serif;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0px 1px 5px rgba(50, 50, 50, .5);
+        width: 100%;
+        margin-top: 310px;
+        line-height: 20px;
+    }
+
+    /* Corp section for smartphone
+   --------------------------------------------------------------------- */
+    #Corp .main p.title { 
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 18px;
+    }
+
+    #Corp p { 
+        padding-left: 28px;
+        padding-right: 28px;
+        font-size: 13px;
+    }
+
+
+    /* services section for smartphone
+   --------------------------------------------------------------------- */
+    /* div section-head */
+    #services .section-head p.sub { 
+        padding-left: 28px;
+        padding-right: 28px;
+        font-size: 15px;
+    }
+    .services-wrapper p,
+    .process-wrapper p {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    /* Portfolio section for smartphone
+   --------------------------------------------------------------------- */
+    #portfolio .col p { 
+        text-align: center;
+    }
+    #portfolio .col p.name { 
+        font-size: 20px;
+    }
+    #portfolio .col p.history {
+        margin-right:10px;
+        margin-left: 10px; 
+        font-size: 14px;
+    }
+    #portfolio .col p.message { 
+        margin-right:10px;
+        margin-left: 10px; 
+        font-size: 14px;
+    }
+
+   /* contact section for smartphone
+   ----------------------------------------------------------------------- */
+    #contact .section-head p.sub { font-size: 12px; }
+    #contact form-container { 
+        margin-left: 12px;
+        margin-right: 12px;
+     }
+
+} /* mobile-wide settings end */
+
+/* mobile narrow
+  -------------------------------------------------------------------------- */
+@media only screen and (max-width: 460px) {
+
+}
+
+
+

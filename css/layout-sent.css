@@ -1,0 +1,89 @@
+/*
+   TOC:
+   a. Common Styles
+   j. Contact
+   n. Media Queries
+
+===================================================================== */
+
+/* ================================================================== */
+/* a. Common Styles
+/* ================================================================== */
+/* Left clearing for flexible columns - columns that changes width in
+different screen sizes. Makes columns with different heights align
+properly.
+--------------------------------------------------------------------- */
+.first { clear: left; }   /* first column in default screen */
+.m-first { clear: none; } /* first column in medium size screens */
+
+/* ================================================================== */
+/* j. Contact
+/* ================================================================== */
+/* overall settings */
+#contact {
+   background: #f5f5f5 url(../images/patterns/grey.png);
+   padding-top: 75px;
+   padding-bottom: 50px;
+}
+
+/* div section-head */
+#contact .section-head h2,
+#contact .section-head p.eng,
+#contact .section-head p.sub,
+#contact .section-head p.object {
+   color: #0073C0;
+   text-align: center;
+}
+
+#contact .message-success {
+   color: #0073C0;
+   text-align: center;
+}
+#contact .message-success a{
+   color: #fff;
+   margin-top: 20px;
+   text-align: center;
+}
+#contact .message-success a.button{
+   font: 18px/30px montserrat-bold, sans-serif;
+   letter-spacing: 3px;
+   color:#fff;
+   background: #0073C0;
+   padding: 18px 30px;
+   border: none;
+   cursor: pointer;
+   height: auto;
+   display: inline-block;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+}
+#contact .message-success a.button:hover {
+	color: #0073C0;
+	background: #fff;
+}
+
+/* ================================================================== */
+/* n. Media Queries
+/* ================================================================== */
+/* small screens
+--------------------------------------------------------------------- */
+@media only screen and (max-width: 836px) {
+}
+/* mobile wide
+---------------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+   /* contact section
+   ----------------------------------------------------------------------- */
+    #contact .section-head p.sub,
+    #contact .message-success { font-size: 12px; }
+
+   /* left clearing */
+   .first { clear: none; }
+   .m-first { clear: left; }
+}
+
+
+
